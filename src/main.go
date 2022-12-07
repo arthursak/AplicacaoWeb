@@ -58,9 +58,10 @@ func index(w http.ResponseWriter, r *http.Request) {
 		p.Descricao = descricao
 		p.Quant = quant
 		p.Preco = preco
-	}
 
-	produtos = append(produtos, p)
+		produtos = append(produtos, p)
+
+	}
 
 	temp.ExecuteTemplate(w, "index", produtos)
 	defer db.Close()
